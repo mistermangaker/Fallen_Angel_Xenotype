@@ -16,17 +16,15 @@
         <!-- Config pages -->
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
           <def>ConfigurePawnsXenotypes</def>
-          <pawnChoiceCount>6</pawnChoiceCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+          
           <customSummary>start with 1 angel and 5 colonists and starting supplies</customSummary>
           <overrideKinds>
             <li>
               <xenotype>Fallen_angel</xenotype>
               <pawnKind>ShamiaColonist</pawnKind>
             </li>
-            <li>
-              <xenotype>gremlins</xenotype>
-              <pawnKind>GremlinColonist</pawnKind>
-            </li>
+            
           </overrideKinds>
           <xenotypeCounts>
             <li>
@@ -37,7 +35,7 @@
               <allowedDevelopmentalStages>Adult, Child</allowedDevelopmentalStages>
             </li>
             <li>
-              <xenotype>gremlins</xenotype>
+              <xenotype>Baseliner</xenotype>
               <count>5</count>
             </li>
           </xenotypeCounts>
@@ -94,9 +92,9 @@
         </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
-          <thingDef>MeleeWeapon_LongSword</thingDef>
+          <thingDef>fallen_angel_LongSword</thingDef>
           <quality>Masterwork</quality>
-          <stuff>Steel</stuff>
+          
         </li>
 
         <!-- Starting research -->
@@ -109,10 +107,10 @@
 
   <ScenarioDef>
     <defName>fallencult</defName>
-    <label>The Failed Angel Cult</label>
-    <description>Throughout the land there exist creatures that mimic angels in their appearance. These creatures are extremely charismatic and powerful. They form small cults surrounding themseleves. This is the story of one of those cults going out into the wilderness in search of a new home. It would seem like this particular journey didnt go as planned.</description>
+    <label>The great Angel Cult</label>
+    <description>Throughout the land there exist creatures that mimic angels in their appearance. These creatures are extremely charismatic and powerful. They form small cults surrounding themseleves. This is the story of one of those cults going out into the wilderness in search of a new home. </description>
     <scenario>
-      <summary>start with 1 angel and 2 colonists and little supplies</summary>
+      <summary>start with 1 angel and 5 colonists</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>PlayerColony</factionDef>
@@ -122,17 +120,14 @@
         <!-- Config pages -->
         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
           <def>ConfigurePawnsXenotypes</def>
-          <pawnChoiceCount>3</pawnChoiceCount>
-          <customSummary>start with 1 angel and 2 colonists and little supplies</customSummary>
+          
+          <customSummary>start with 1 angel and 5 colonists</customSummary>
           <overrideKinds>
             <li>
               <xenotype>Fallen_angel</xenotype>
               <pawnKind>ShamiaColonist</pawnKind>
             </li>
-            <li>
-              <xenotype>gremlins</xenotype>
-              <pawnKind>GremlinColonist</pawnKind>
-            </li>
+            
           </overrideKinds>
           <xenotypeCounts>
             <li>
@@ -143,8 +138,8 @@
               <allowedDevelopmentalStages>Adult, Child</allowedDevelopmentalStages>
             </li>
             <li>
-              <xenotype>gremlins</xenotype>
-              <count>2</count>
+              <xenotype>Baseliner</xenotype>
+              <count>5</count>
             </li>
           </xenotypeCounts>
         </li>
@@ -162,39 +157,8 @@
         </li>
 
         <!-- Player pawns modifiers -->
-        <li Class="ScenPart_ForcedHediff">
-          <def>ForcedHediff</def>
-          <visible>false</visible>
-          <context>PlayerStarter</context>
-          <chance>0.5</chance>
-          <hediff>Malnutrition</hediff>
-          <severityRange>0.2~0.4</severityRange>
-        </li>
         
-        <li Class="ScenPart_SetNeedLevel">
-          <def>SetNeedLevel</def>
-          <visible>false</visible>
-          <context>PlayerStarter</context>
-          <chance>1.0</chance>
-          <need>Food</need>
-          <levelRange>0~0.1</levelRange>
-        </li>
-        <li Class="ScenPart_SetNeedLevel">
-          <def>SetNeedLevel</def>
-          <visible>false</visible>
-          <context>PlayerStarter</context>
-          <chance>1.0</chance>
-          <need>Mood</need>
-          <levelRange>0.2~0.5</levelRange>
-        </li>
-        <li Class="ScenPart_SetNeedLevel">
-          <def>SetNeedLevel</def>
-          <visible>false</visible>
-          <context>PlayerStarter</context>
-          <chance>1.0</chance>
-          <need>Rest</need>
-          <levelRange>0.0~0.1</levelRange>
-        </li>
+
 
 
 
@@ -202,32 +166,91 @@
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>Silver</thingDef>
-          <count>200</count>
+          <count>800</count>
         </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>MealSurvivalPack</thingDef>
-          <count>10</count>
+          <count>50</count>
         </li>
-        
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>MedicineIndustrial</thingDef>
-          <count>3</count>
+          <count>30</count>
         </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>ComponentIndustrial</thingDef>
-          <count>10</count>
+          <count>30</count>
         </li>
-        
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
-          <thingDef>MeleeWeapon_LongSword</thingDef>
-          <quality>Masterwork</quality>
-          <stuff>Steel</stuff>
+          <thingDef>Gun_BoltActionRifle</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_Revolver</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_Knife</thingDef>
+          <stuff>Plasteel</stuff>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Apparel_FlakPants</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Apparel_FlakVest</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Apparel_AdvancedHelmet</thingDef>
+          <stuff>Plasteel</stuff>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <count>1</count>
+          <bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
         </li>
 
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Steel</thingDef>
+          <count>450</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>300</count>
+        </li>      
+
+        <!-- Scatter some things anywhere -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>ShipChunk</thingDef>
+          <allowRoofed>false</allowRoofed>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>Steel</thingDef>
+          <count>720</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>7</count>
+        </li>
+
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>fallen_angel_LongSword</thingDef>
+          <quality>Masterwork</quality>
+          
+        </li>
 
       </parts>
     </scenario>
