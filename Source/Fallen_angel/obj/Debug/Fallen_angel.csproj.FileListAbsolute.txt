@@ -1,5 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Fallen_Angel_Xenotype\Assemblies\Fallen_angel.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Fallen_Angel_Xenotype\Source\Fallen_angel\obj\Debug\Fallen_angel.csproj.AssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Fallen_Angel_Xenotype\Source\Fallen_angel\obj\Debug\Fallen_angel.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Fallen_Angel_Xenotype\Source\Fallen_angel\obj\Debug\Fallen_angel.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Fallen_Angel_Xenotype\Source\Fallen_angel\obj\Debug\Fallen_angel.csproj.CopyComplete
