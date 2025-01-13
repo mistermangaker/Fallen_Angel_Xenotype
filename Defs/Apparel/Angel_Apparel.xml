@@ -11,9 +11,12 @@
       <graphicClass>Graphic_Single</graphicClass>
     
     </graphicData>
-    <costList>
-        <Cloth>100</Cloth>
-    </costList>
+    <thingClass>Fallen_angel.NoColorApparel</thingClass>
+	    <costStuffCount>80</costStuffCount>
+		<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+		</stuffCategories>
     <thingCategories>
       <li>Apparel</li>
     </thingCategories>
@@ -86,9 +89,12 @@
 	      <graphicClass>Graphic_Single</graphicClass>
 	    
 	    </graphicData>
-	    <costList>
-	        <Cloth>100</Cloth>
-	    </costList>
+	    <thingClass>Fallen_angel.NoColorApparel</thingClass>
+	    <costStuffCount>80</costStuffCount>
+		<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+		</stuffCategories>
 	    <thingCategories>
 	      <li>Apparel</li>
 	    </thingCategories>
@@ -161,9 +167,11 @@
       <texPath>Aparrel/swe_shamia_maidaheadband/headress</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <costList>
-        <Cloth>100</Cloth>
-    </costList>
+    <thingClass>Fallen_angel.NoColorApparel</thingClass>
+	    <costStuffCount>20</costStuffCount>
+		<stuffCategories>
+		<li>Fabric</li>
+		</stuffCategories>
     <thingCategories>
       <li>Apparel</li>
     </thingCategories>
