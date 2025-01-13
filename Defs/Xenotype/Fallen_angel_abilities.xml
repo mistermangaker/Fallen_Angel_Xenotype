@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+ <AbilityDef>
+    <defName>angelLongjump</defName>
+    <label>angelic flight</label>
+    <description>Fly a short distance using the power of the wings. It uses no hemogen to do this</description>
+    <iconPath>UI/Abilities_Icon/FallenAngelLongJump</iconPath>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityJump</verbClass>
+      <label>jump</label>
+      <violent>false</violent>
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+      <warmupTime>0.5</warmupTime>
+      <range>19.9</range>
+      <requireLineOfSight>true</requireLineOfSight>
+      <soundCast>angel_take_off</soundCast>
+      <soundLanding>Longjump_Land</soundLanding>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <jobDef>CastJump</jobDef>
+  </AbilityDef>
+
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>AngelResurrect</defName>
+    <label>resurrect</label>
+    <description>inject highly concentrated hemogen in the bloodstream to infuse a corpse's body with new life, repairing degenerated cell structures and kickstarting vital functions. The older and worse-preserved the corpse is, the more likely it is that they will come back with memory loss or health conditions. This ability to exhaust all the supply of hemogen and it can only be used very rarely.</description>
+    <iconPath>UI/Abilities_Icon/FallenAngelResurrect</iconPath>
+    <cooldownTicksRange>1840000~2560000</cooldownTicksRange>
+    <warmupMote>Mote_ResurrectAbility</warmupMote>
+    <warmupStartSound>Resurrect_Cast</warmupStartSound>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <category>Sanguophage</category>
+    <displayOrder>600</displayOrder>
+    <hostile>false</hostile>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <soundCast>Resurrect_Resolve</soundCast>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_Resurrect" />
+      <li Class="CompProperties_AbilityHemogenCost">
+        <hemogenCost>0.90</hemogenCost>
+      </li>
+      <li Class="CompProperties_AbilitySocialInteraction">
+        <interactionDef>Angelresurrected</interactionDef>
+        <canApplyToUnconscious>true</canApplyToUnconscious>
+      </li>
+    </comps>
+    
+  </AbilityDef>
+
+ <InteractionDef>
+    <defName>Angelresurrected</defName>
+    <label>licked clean</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>UI/Motes/Alive</symbol>
+    <recipientThought>angel_ressurected_me</recipientThought>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry(p=4)->[INITIATOR_nameDef] resurrected [RECIPIENT_nameDef]</li>
+        <li>r_logentry->[INITIATOR_nameDef] resurrected [RECIPIENT_nameDef] "took you long enough" said [RECIPIENT_nameDef]</li>
+        <li>r_logentry->[INITIATOR_nameDef] resurrected [RECIPIENT_nameDef] "curse you, I was enjoying my rest" said [RECIPIENT_nameDef]</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <ThoughtDef>
+    <defName>angel_ressurected_me</defName>
+    <showBubble>true</showBubble>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Baby, Child, Adult</socialTargetDevelopmentalStageFilter>
+    <stages>
+      <li>
+        <label>Cleaned my wounds</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+    <thoughtToMake>angel_ressurected_me_mood</thoughtToMake>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>angel_ressurected_me_mood</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>Alive</label>
+        <description>Wow! I'm Alive</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+
+
+
+<!---->
+
+
+
+  <HediffDef>
+    <defName>AngelJoyfuzz</defName>
+    <label>Angel kiss</label>
+    <description>A kiss from an angel is divine. It provides a very euphoric feeling at the cost of overwhelming the recipient's mind</description>
+    <isBad>false</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <li>
+        <partEfficiencyOffset>-0.25</partEfficiencyOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <InteractionDef>
+    <defName>AngelWordOfJoy</defName>
+    <label>word of joy</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>UI/Motes/Kissy</symbol>
+    <recipientThought>angel_kissed_me</recipientThought>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->Chu! [INITIATOR_nameDef] just gave [RECIPIENT_nameDef] a warm kiss on the cheek!</li>
+        <li>r_logentry->Chu! [INITIATOR_nameDef] held [RECIPIENT_nameDef] down and gave them kisses all over their face!</li>
+      </rulesStrings>
+    </logRulesInitiator>
+
+  </InteractionDef>
+
+    <ThoughtDef>
+    <defName>AngelJoyfuzz</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>AngelJoyfuzz</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>angel kiss</label>
+        <description>I got a kissy!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<ThoughtDef>
+    <defName>angel_kissed_me</defName>
+    <showBubble>true</showBubble>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Baby, Child, Adult</socialTargetDevelopmentalStageFilter>
+    <stages>
+      <li>
+        <label>kissed me</label>
+        <baseOpinionOffset>2</baseOpinionOffset>
+      </li>
+    </stages>
+  
+  </ThoughtDef>
+
+
+<AbilityDef>
+   <defName>Chu_WordOfJoy</defName>
+    <label>Chu (kiss)</label>
+    <description>Kiss them right on the cheek and wash all of those worries away. angel have the ability to wash away all of your worries with a single kiss</description>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <iconPath>UI/Abilities_Icon/FallenAngelWordOfJoy</iconPath>
+     <cooldownTicksRange>1000</cooldownTicksRange>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <warmupMoteSocialSymbol>Things/Mote/ThoughtSymbol/GenericGood</warmupMoteSocialSymbol>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <showWhenDrafted>false</showWhenDrafted>
+    
+    <hotKey>Misc12</hotKey>
+    <uiOrder>2</uiOrder>
+    <warmupStartSound>WorkDrive_Warmup</warmupStartSound>
+    <hostile>false</hostile>
+    <statBases>
+      <Ability_Duration>2000</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>-1</range>
+      <warmupTime>3.0</warmupTime>
+      <targetParams>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <onlyTargetColonists>false</onlyTargetColonists>
+      </targetParams>
+    </verbProperties>
+    <comps>
+   
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>AngelJoyfuzz</hediffDef>
+        <onlyBrain>True</onlyBrain>
+        <applicableToMechs>False</applicableToMechs>
+        <canTargetBaby>False</canTargetBaby>
+      </li>
+      <li Class="CompProperties_AbilitySocialInteraction">
+        <interactionDef>AngelWordOfJoy</interactionDef>
+        <canApplyToUnconscious>true</canApplyToUnconscious>
+      </li>
+      <li Class="CompProperties_AbilityHemogenCost">
+        <hemogenCost>0.20</hemogenCost>
+      </li>
+    </comps>
+  </AbilityDef>
+
+
+
+
+
+ <AbilityDef>
+    <defName>AngelBloodSpray</defName>
+    <label>acidic blood spray</label>
+    <description>Spray a mixure of blood and highly corrosive stomach acid onto your targets.</description>
+    <iconPath>UI/Abilities_Icon/FallenAngelBloodSpray</iconPath>
+    <cooldownTicksRange>2000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <displayOrder>300</displayOrder>
+    <category>Sanguophage</category>
+    <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>8.9</range>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>AcidSpray_Resolve</soundCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilitySprayLiquid">
+        <projectileDef>Proj_blood</projectileDef>
+        <numCellsToHit>9</numCellsToHit>
+        <sprayEffecter>AcidSpray_Directional</sprayEffecter>
+      </li>
+      <li Class="CompProperties_AbilityHemogenCost">
+        <hemogenCost>0.30</hemogenCost>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <ThingDef>
+    <defName>Proj_blood</defName>
+    <label>acid</label>
+    <thingClass>Projectile_Liquid</thingClass>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <texPath>Projectile/BloodSprayA</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>BloodBurn</damageDef>
+      <speed>25</speed>
+      <damageAmountBase>30</damageAmountBase>
+      <arcHeightFactor>0.4</arcHeightFactor>
+      <armorPenetrationBase>0.8</armorPenetrationBase>
+      <stoppingPower>1</stoppingPower>
+      <shadowSize>0</shadowSize>
+      <filth>Filth_Blood</filth>
+      <filthCount>1</filthCount>
+    </projectile>
+  </ThingDef>
+
+  <DamageDef ParentName="Flame">
+    <defName>BloodBurn</defName>
+    <label>acid burn</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <armorCategory>Sharp</armorCategory>
+    <hediff>AcidBloodBurn</hediff>
+  </DamageDef>
+
+  <HediffDef ParentName="BurnBase">
+    <defName>AcidBloodBurn</defName>
+    <label>acidic Blood burn</label>
+    <labelNoun>an acid burn</labelNoun>
+    <description>An acid burn.</description>
+    <comps>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>acidic Blood burn scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <destroyedLabel>Dissolved off</destroyedLabel>
+      <destroyedOutLabel>Dissolved</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+ 
+
+ <AbilityDef>
+    <defName>LickyLicky</defName>
+    <label>Lick clean</label>
+    <description>Angels have the ability to infuse hemogen into a person through their saliva this hemogen is beneficial to the immune system. By licking a persons wounds or spitting in their mouth, they can greatly help the sick and injuried recover faster</description>
+    <iconPath>UI/Abilities_Icon/FallenAngelHealingSpit</iconPath>
+    <hotKey>Misc12</hotKey>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <showWhenDrafted>True</showWhenDrafted>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <!--<emittedFleck>PreachHealth</emittedFleck>-->
+    <emissionInterval>60</emissionInterval>
+    <warmupMoteSocialSymbol>UI/Motes/HealthLick</warmupMoteSocialSymbol>
+    <uiOrder>4</uiOrder>
+    <warmupSound>Meal_Eat</warmupSound>
+    <hostile>false</hostile>
+    <statBases>
+      <Ability_Duration>5000</Ability_Duration>
+    </statBases>
+    
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>AngelHealthLick</hediffDef>
+        <onlyBrain>false</onlyBrain>
+        <replaceExisting>true</replaceExisting>
+        <sound>Psycast_WordOf_Effect</sound>
+      </li>
+      
+      <li Class="CompProperties_AbilitySocialInteraction">
+        <interactionDef>AngelLickedClean</interactionDef>
+        <canApplyToUnconscious>true</canApplyToUnconscious>
+      </li>
+      <li Class="Fallen_angel.CompProperties_LickCheck" />
+    </comps>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>-1</range>
+      <warmupTime>24.0</warmupTime>
+      <targetParams>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <onlyTargetColonists>false</onlyTargetColonists>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <InteractionDef>
+    <defName>AngelLickedClean</defName>
+    <label>licked clean</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>UI/Motes/HealthLick</symbol>
+    <recipientThought>Angel_licked</recipientThought>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->licky licky! [INITIATOR_nameDef] just licked [RECIPIENT_nameDef] all over for an uncomfortable amount of time.</li>
+        <li>r_logentry->Patoo! [INITIATOR_nameDef] just spit in [RECIPIENT_nameDef]'s mouth!</li>
+        <li>r_logentry->[one] [two]</li>
+        <li>one->[INITIATOR_nameDef] just licked [RECIPIENT_nameDef]'s</li>
+        <li>one->[INITIATOR_nameDef] just spit on [RECIPIENT_nameDef]'s</li>
+        <li>one->[INITIATOR_nameDef] just spit in their hands and rubbed [RECIPIENT_nameDef]'s</li>
+        <li>two->face and called it good</li>
+        <li>two->feet and called it good</li>
+        <li>two->feet an uncomfortable amount</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+
+  <HediffDef>
+    <defName>AngelHealthLick</defName>
+    <label>Angelic saliva</label>
+    <description>This person has been licked by, or otherwise consumed the healing saliva of an angel and as such their healing has been greatly improved.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+          <InjuryHealingFactor>0.25</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+   <ThoughtDef>
+    <defName>Angel_licked</defName>
+    <showBubble>true</showBubble>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>30</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Baby, Child, Adult</socialTargetDevelopmentalStageFilter>
+    <stages>
+      <li>
+        <label>Cleaned my wounds</label>
+        <baseOpinionOffset>2</baseOpinionOffset>
+      </li>
+    </stages>
+    <thoughtToMake>Angel_wounds_cleaned</thoughtToMake>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Angel_wounds_cleaned</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>wounds cleaned</label>
+        <description>My wounds were licked clean. That's good.... I think</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+
+
+<AbilityDef>
+    <defName>AngelWordOfLove</defName>
+    <label>psychic crush</label>
+    <description>Fallen angels have the ability to psychically implant the idea of loving someone into the minds of their targets. even including themselves.</description>
+    
+    <iconPath>UI/Abilities_Icon/FallenAngelWordOfLove</iconPath>
+    <hotKey>Misc12</hotKey>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <!--<emittedFleck>PreachHealth</emittedFleck>-->
+    <emissionInterval>60</emissionInterval>
+    <warmupMoteSocialSymbol>UI/Abilities_Icon/FallenAngelWordOfLove</warmupMoteSocialSymbol>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <uiOrder>4</uiOrder>
+    <warmupSound>PreachHealth_Warmup</warmupSound>
+    <showWhenDrafted>false</showWhenDrafted>
+    <hostile>false</hostile>
+    <statBases>
+      <Ability_Duration>8000</Ability_Duration>
+    </statBases>
+    <comps>
+    <!--<li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>WordOfApply</fleckDef>
+        <sound>Psycast_WordOf_Effect</sound>
+      </li>-->
+      <li Class="CompProperties_AbilityWordOfLove">
+        <destination>Selected</destination>
+        <psychic>False</psychic>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilitySocialInteraction">
+        <interactionDef>angelwordoflove</interactionDef>
+      </li>
+      <li Class="CompProperties_AbilityHemogenCost">
+        <hemogenCost>0.20</hemogenCost>
+      </li>
+      
+    </comps>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>-1</range>
+      <warmupTime>60.0</warmupTime>
+      <targetParams>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <onlyTargetColonists>false</onlyTargetColonists>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+
+  <InteractionDef>
+    <defName>angelwordoflove</defName>
+    <label>word of love</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/WordOfLove</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] psychically suggested that [RECIPIENT_nameDef] should feel a new romantic desire.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+
+</Defs>

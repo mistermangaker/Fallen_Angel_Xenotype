@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef Name="angelbase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>kindFallenangel</defaultFactionType>
+    <chemicalAddictionChance>0.06</chemicalAddictionChance>
+    <nameMaker>NamerFallenAngel</nameMaker>
+    <fixedGender>Female</fixedGender>
+    <humanPregnancyChance>0</humanPregnancyChance>
+    <invNutrition>2.55</invNutrition>
+    <itemQuality>Normal</itemQuality>
+    
+    <minGenerationAge>20</minGenerationAge>
+    <maxGenerationAge>30</maxGenerationAge>
+    <combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
+
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
+    <techHediffsChance>0.03</techHediffsChance>
+    <techHediffsMoney>50~800</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <techHediffsDisallowTags>
+      <li>PainCauser</li>
+    </techHediffsDisallowTags>
+    <xenotypeSet Inherit="False">
+        <xenotypeChances>
+            <Fallen_angel MayRequire="Ludeon.RimWorld.Biotech">999</Fallen_angel>
+        </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+
+  <PawnKindDef ParentName="angelbase">
+    <defName>Angel_Trader</defName>
+    <label>trader</label>
+    <trader>true</trader>
+    <apparelMoney>350~600</apparelMoney>
+    <apparelTags>
+      <li>Shamia_outfit</li>
+    </apparelTags>
+    <combatPower>10</combatPower>
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>9~15</initialResistanceRange>
+  </PawnKindDef>
+
+
+  <PawnKindDef ParentName="angelbase" Name="AngelFighterTeirOne" Abstract="True">
+  <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+  <apparelMoney>350~600</apparelMoney>
+      <apparelTags>
+      <li>Shamia_outfit</li>
+    </apparelTags>
+    <requiredWorkTags>
+        <li>Violent</li>
+    </requiredWorkTags>
+    <initialResistanceRange>13~21</initialResistanceRange>
+    <initialWillRange>1~3</initialWillRange>
+    </PawnKindDef>
+
+
+
+  <PawnKindDef ParentName="AngelFighterTeirOne">
+    <defName>fallenangel_melee_basic</defName>
+    <label>angelic melee</label>
+    <combatPower>30</combatPower>
+    <weaponMoney>330~650</weaponMoney>
+    <weaponTags>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+  </PawnKindDef>
+
+
+  <PawnKindDef ParentName="AngelFighterTeirOne">
+    <defName>fallenangel_ranged_basic</defName>
+    <label>angelic ranged</label>
+    <combatPower>30</combatPower>
+    <weaponMoney>330~650</weaponMoney>
+        <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+    <weaponTags>
+      <li>NeolithicRangedDecent</li>
+    </weaponTags>
+  </PawnKindDef>
+
+
+    <PawnKindDef ParentName="AngelFighterTeirOne" Name="AngelFighterTeirTwo" Abstract="True">
+    <initialWillRange>2~4</initialWillRange>
+    <initialResistanceRange>9~15</initialResistanceRange>
+    <apparelMoney>600~1000</apparelMoney>
+      <apparelTags>
+      <li>Shamia_outfit</li>
+      <li>MedievalMilitary</li>
+    </apparelTags>
+    </PawnKindDef>
+
+  <PawnKindDef ParentName="AngelFighterTeirTwo">
+    <defName>fallenangel_melee_mid</defName>
+    <label>angelic melee</label>
+    <combatPower>70</combatPower>
+    <weaponMoney>330~650</weaponMoney>
+    <weaponTags>
+      <li>Angelic_melee</li>
+    </weaponTags>
+  </PawnKindDef>
+
+
+  <PawnKindDef ParentName="AngelFighterTeirTwo">
+    <defName>fallenangel_ranged_mid</defName>
+    <label>angelic ranged</label>
+    <combatPower>70</combatPower>
+    <weaponMoney>330~650</weaponMoney>
+        <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+    <weaponTags>
+      <li>Angelic_ranged</li>
+    </weaponTags>
+  </PawnKindDef>
+
+    <PawnKindDef ParentName="AngelFighterTeirTwo">
+    <defName>fallenangel_explosive_mid</defName>
+    <label>angelic explosive</label>
+    <combatPower>100</combatPower>
+    <weaponMoney>330~650</weaponMoney>
+        <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+    <weaponTags>
+      <li>Angelic_explosive</li>
+    </weaponTags>
+  </PawnKindDef>
+
+</Defs>

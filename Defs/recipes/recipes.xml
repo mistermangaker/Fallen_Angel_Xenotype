@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+
+  <RecipeDef>
+    <defName>Make_explosion_core</defName>
+    <label>make explosion core</label>
+    <description>Make a batch of chemfuel by extracting and condensing wood gas from logs.</description>
+    <jobString>making explosion core</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Smith</soundWorking>
+    <workAmount>2000</workAmount>
+    <unfinishedThingDef>UnfinishedBoomSphere</unfinishedThingDef>
+        <recipeUsers>
+      <li>Tableangelforge</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Fallen_Angel_Steel</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+       <li>
+        <filter>
+          <thingDefs>
+            <li>Shell_AntigrainWarhead</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Fallen_Angel_Steel</li>
+        <li>Shell_AntigrainWarhead</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <explosion_component>1</explosion_component>
+    </products>
+  </RecipeDef>
+
+
+</Defs>

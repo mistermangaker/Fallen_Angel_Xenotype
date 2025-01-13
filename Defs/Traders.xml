@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TraderKindDef>
+    <defName>Caravan_Angel_ShamanMerchant</defName>
+    <label>angel merchant</label>
+    <stockGenerators>
+      
+      <!-- Resources -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>750~1200</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Pemmican</thingDef>
+        <countRange>150~300</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Fallen_Angel_Steel</thingDef>
+        <countRange>50~150</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Gold</thingDef>
+        <countRange>30~60</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Neutroamine</thingDef>
+        <countRange>25~100</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Tableangelforge</thingDef>
+        <countRange>1~1</countRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>Medicine</categoryDef>
+        <maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <maxTechLevelBuy>Ultra</maxTechLevelBuy>
+        <countRange>1~2</countRange>
+      </li>
+      
+      <!-- Drugs -->
+      <li Class="StockGenerator_Category">
+        <categoryDef>Drugs</categoryDef>
+        <maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>1~1</thingDefCountRange>
+        <totalPriceRange>300~700</totalPriceRange>
+      </li>
+
+      <!-- Techprints -->
+
+      
+      <!-- Weapons -->
+      <!-- none -->
+      
+      <!-- Apparel -->
+        <li Class="StockGenerator_MarketValue">
+        <tradeTag>AngelClothing</tradeTag>
+        <countRange>3~3</countRange>
+      </li>
+
+      <!-- Implants -->
+      <!-- none -->
+
+      <!-- Buildings -->
+    <li Class="StockGenerator_Category">
+        <categoryDef>BuildingsPaintings</categoryDef>
+        <thingDefCountRange>3~10</thingDefCountRange>
+        <countRange>1~2</countRange>
+      </li>
+
+      <!-- Exotic -->
+      <li Class="StockGenerator_Tag">
+        <tradeTag>Artifact</tradeTag>
+        <thingDefCountRange>3~3</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+
+      <!-- Slaves -->
+      <!-- none -->
+      
+      <!-- Animals -->
+
+      
+      <!-- Buying -->
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>AngelArt</tag></li>
+      
+    </stockGenerators>
+  </TraderKindDef>
+
+
+  <TraderKindDef>
+    <defName>Caravan_Angel_chocolate</defName>
+    <label>chocolate merchant</label>
+    <stockGenerators>
+      
+      <!-- Resources -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>750~1200</countRange>
+      </li>
+
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Chocolate</thingDef>
+        <countRange>250~400</countRange>
+      </li>
+
+      
+      <!-- Drugs -->
+
+
+      <!-- Techprints -->
+
+      
+      <!-- Weapons -->
+      <!-- none -->
+      
+      <!-- Apparel -->
+
+
+      <!-- Implants -->
+      <!-- none -->
+
+      <!-- Buildings -->
+
+
+      <!-- Exotic -->
+
+
+      <!-- Slaves -->
+      <!-- none -->
+      
+      <!-- Animals -->
+
+      
+      <!-- Buying -->
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>AngelArt</tag></li>
+      
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef>
+    <defName>Caravan_Angel_weapons</defName>
+    <label>weapon merchant</label>
+    <stockGenerators>
+      
+      <!-- Resources -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>750~1200</countRange>
+      </li>
+
+            <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineIndustrial</thingDef>
+        <countRange>2~5</countRange>
+      </li>
+
+    <li Class="StockGenerator_MarketValue">
+        <tradeTag>Angelic_weapon</tradeTag>
+        <countRange>5~10</countRange>
+      </li>
+      
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Tableangelforge</thingDef>
+        <countRange>1~1</countRange>
+      </li>
+
+            <li Class="StockGenerator_MarketValue">
+        <tradeTag>WeaponRanged</tradeTag>
+        <countRange>5~5</countRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>WeaponsMelee</categoryDef>
+        <thingDefCountRange>6~6</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>MortarShell</tradeTag>
+        <thingDefCountRange>1~2</thingDefCountRange>
+        <countRange>3~15</countRange>
+      </li>
+      
+      <!-- Apparel -->
+      <li Class="StockGenerator_MarketValue">
+        <tradeTag>Armor</tradeTag>
+        <countRange>5~5</countRange>
+      </li>
+      
+      <!-- Buying -->
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>AngelArt</tag></li>
+      
+    </stockGenerators>
+  </TraderKindDef>
+
+</Defs>

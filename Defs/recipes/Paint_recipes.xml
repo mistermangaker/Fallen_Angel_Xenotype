@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RecipeDef>
+    <defName>MakePaintFromChemfuel</defName>
+    <label>make paint from chemfeul</label>
+    <description>Make paint.</description>
+    <jobString>Making paint.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <recipeUsers>
+        <li>TableSculpting</li>
+    </recipeUsers>
+    <soundWorking>Interact_Research</soundWorking>
+    <workAmount>500</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>16</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Chemfuel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Item_paint>16</Item_paint>
+    </products>
+    <skillRequirements>
+      <Crafting>3</Crafting>
+    </skillRequirements>
+    <workSkill>Artistic</workSkill>
+    <displayPriority>0</displayPriority>
+  </RecipeDef>
+
+ <RecipeDef>
+    <defName>MakePaintFromDye</defName>
+    <label>make paint from dye</label>
+    <description>Make paint.</description>
+    <jobString>Making paint.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <recipeUsers>
+        <li>TableSculpting</li>
+    </recipeUsers>
+    <soundWorking>Interact_Research</soundWorking>
+    <workAmount>500</workAmount>
+    
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Dye</li>
+          </thingDefs>
+        </filter>
+        <count>16</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Dye</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Item_paint>16</Item_paint>
+    </products>
+    <skillRequirements>
+      <Crafting>3</Crafting>
+    </skillRequirements>
+    <workSkill>Artistic</workSkill>
+    <displayPriority>0</displayPriority>
+  </RecipeDef>
+
+
+</Defs>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<DesignatorDropdownGroupDef>
+    <defName>Body_Pillows</defName>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>shamia_pillow_one</defName>
+    <label>shamia body pillow</label>
+    <description>a body pillow.</description>
+	<thingClass>Building</thingClass>
+	<designatorDropdown>Body_Pillows</designatorDropdown>
+	<clearBuildingArea>false</clearBuildingArea>
+	<minifiedDef>MinifiedThing</minifiedDef>
+    
+	<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
+    <graphicData>
+      <texPath>Buildings/Body_pillows/Shamia_bodypillow_one</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(1,2)</drawSize>
+    </graphicData>
+    <size>(1,2)</size>
+	<fillPercent>0.15</fillPercent>
+	<designationCategory>Furniture</designationCategory>
+	<uiIconPath>Buildings/Body_pillows/Shamia_bodypillow_one</uiIconPath>
+	<blockWind>false</blockWind>
+	<altitudeLayer>BuildingOnTop</altitudeLayer>
+	<building>
+		<isEdifice>false</isEdifice>
+		<canPlaceOverWall>true</canPlaceOverWall>
+	</building>
+         <placeWorkers>
+      
+      <li>Fallen_angel.PlaceWorker_ongroundonly</li>
+    </placeWorkers>
+	<passability>Standable</passability>
+	<costList>
+      <SWE_daki>1</SWE_daki>
+    </costList>
+	<pathCost>8</pathCost>
+	<statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToBuild>1</WorkToBuild>
+      <Mass>1.5</Mass>
+      <Flammability>1</Flammability>
+	  <Beauty>6</Beauty>
+    </statBases>
+	
+  </ThingDef>
+   <ThingDef ParentName="BuildingBase">
+    <defName>shamia_pillow_two</defName>
+    <label>shamia body pillow (alternate)</label>
+    <description>a body pillow.</description>
+	<thingClass>Building</thingClass>
+	<designatorDropdown>Body_Pillows</designatorDropdown>
+	<clearBuildingArea>false</clearBuildingArea>
+	<minifiedDef>MinifiedThing</minifiedDef>
+    
+	<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
+    <graphicData>
+      <texPath>Buildings/Body_pillows/Shamia_bodypillow_two</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(1,2)</drawSize>
+    </graphicData>
+    <size>(1,2)</size>
+	<fillPercent>0.15</fillPercent>
+	<designationCategory>Furniture</designationCategory>
+	<uiIconPath>Buildings/Body_pillows/Shamia_bodypillow_two</uiIconPath>
+	<blockWind>false</blockWind>
+	<altitudeLayer>BuildingOnTop</altitudeLayer>
+	<building>
+		<isEdifice>false</isEdifice>
+		<canPlaceOverWall>true</canPlaceOverWall>
+	</building>
+	<passability>Standable</passability>
+     <placeWorkers>
+      
+      <li>Fallen_angel.PlaceWorker_ongroundonly</li>
+    </placeWorkers>
+	<costList>
+      <SWE_daki>1</SWE_daki>
+    </costList>
+	<pathCost>8</pathCost>
+	<statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToBuild>1</WorkToBuild>
+      <Mass>1.5</Mass>
+      <Flammability>1</Flammability>
+	  <Beauty>6</Beauty>
+    </statBases>
+	
+  </ThingDef>
+
+
+  
+
+</Defs>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+ <XenotypeDef>
+    <defName>gremlins</defName>
+    <label>Gremlin</label>
+    <description>A pitiful little creature</description>
+    <iconPath>UI/Gene_Icons/FallenAngelicGremlinUI_icon</iconPath>
+    <displayPriority>12133</displayPriority>
+    <factionlessGenerationWeight>100</factionlessGenerationWeight>
+    <nameMaker>fannamer</nameMaker>
+    <genes>
+      <li>Mood_Optimist</li>
+			<li>KindInstinct</li>
+			<li>Beauty_VeryUgly</li>
+			<li>Eyes_Red</li>
+			<li>Hair_BaldOnly</li>
+			<li>Beard_NoBeardOnly</li>
+			<li>Ears_Pointed</li>
+			<li>Jaw_Heavy</li>
+			<li>Head_Gaunt</li>
+			<li>Brow_Heavy</li>
+			<li>VoicePig</li>
+			<li>FacialRidges</li>
+			<li>Body_Thin</li>
+			<li>Body_Fat</li>
+			<li>Hair_Gray</li>
+			<li>Skin_SheerWhite</li>
+			<li>Skin_LightGray</li>
+    </genes>
+  </XenotypeDef>
+
+
+
+
+
+  <XenotypeDef>
+    <defName>Fallen_angel</defName>
+    <label>fallen angel</label>
+    <description>a gentectically modified Sanguophage, one designed to appear angelic</description>
+    <iconPath>UI/Gene_Icons/FallenAngelicUI_icon</iconPath>
+    <displayPriority>12132</displayPriority>
+    <factionlessGenerationWeight>100</factionlessGenerationWeight>
+    <nameMaker>NamerFallenAngel</nameMaker>
+    <genes>
+      <li>Hemogenic</li>
+			<li>HemogenDrain</li>
+			<li>Bloodfeeder</li>
+
+      <li>angelLongjumpLegs</li>
+      <li>angelResurrect</li>
+      <li>angel_genetics</li>
+      <li>angelwordoflove</li>
+      <li>angelwordofjoy</li>
+      <li>FallenAngel_Horns</li>
+      <li>FallenAngel_Hair</li>
+      <li>AngelTail_Smooth</li>
+      <li>BloodAcidSpray</li>
+      <li>angelgreatasstes</li>
+      <li>AngelHealingSaliva</li>
+      <li>AngelVoice</li>
+
+
+
+			<li>Immunity_Strong</li>
+			<li>WoundHealing_Fast</li>
+			<li>PsychicAbility_Enhanced</li>
+			<li>MeleeDamage_Strong</li>
+			<li>Sleepy</li>
+			<li>Beauty_Pretty</li>
+			<li>Body_Standard</li>
+			<li>Body_Thin</li>
+			<li>Hair_Pink</li>
+			<li>Hair_Grayless</li>
+			<li>AptitudeRemarkable_Shooting</li>
+			<li>AptitudeRemarkable_Melee</li>
+			<li>AptitudeTerrible_Cooking</li>
+			<li>AptitudeTerrible_Plants</li>
+			<li>AptitudeRemarkable_Artistic</li>
+			<li>AptitudeTerrible_Intellectual</li>
+     
+    </genes>
+  </XenotypeDef>
+
+			
+
+
+
+
+
+
+</Defs>

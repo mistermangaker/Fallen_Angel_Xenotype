@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/IncidentDef[defName="StrangerInBlackJoin"]/pawnKind</xpath>
+		<value>
+			<pawnKind>sweetheart</pawnKind>
+		</value>
+	</Operation>
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/IncidentDef[defName="StrangerInBlackJoin"]/letterLabel</xpath>
+		<value>
+			<letterLabel>Tsk Tsk Tsk Shamia </letterLabel>
+		</value>
+	</Operation>
+    <Operation Class="PatchOperationReplace">
+		<xpath>/Defs/IncidentDef[defName="StrangerInBlackJoin"]/letterText</xpath>
+		<value>
+			<letterText>Oh shamia shamia shamia, who could have seen this coming? (Me considering I wrote this message in advance) your colony is on the cusp of destruction (or already well underway in that endeavor) Luckily for you, I (your benevolent God) have sent you a champion to save you. Someones who is (hopefully) more capable. I've cloned myself and sent him to helpout. He should be arriving right now. He should have everything to help you get restarted. \n\nTry not to die again</letterText>
+		</value>
+	</Operation>
+
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/ThingDef[@Name="BaseMeleeWeapon_Sharp"]/recipeMaker/defaultIngredientFilter/disallowedThingDefs</xpath>
+  <value>
+
+          <li>Fallen_Angel_Steel</li>
+
+  </value>
+</Operation>
+
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/ThingDef[@Name="BaseMeleeWeapon_Blunt"]/recipeMaker/defaultIngredientFilter/disallowedThingDefs</xpath>
+  
+  <value>
+
+          <li>Fallen_Angel_Steel</li>
+
+  </value>
+</Operation>
+
+</Patch>

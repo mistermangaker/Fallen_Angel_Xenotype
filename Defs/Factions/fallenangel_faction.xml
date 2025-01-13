@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RulePackDef>
+    <defName>NamerFactionangelcult</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->The Gremlins</li>
+        <li>r_name->The Shamerz</li>
+        <li>r_name->Angels Dudez</li>
+        <li>r_name->Shamia and friends</li>
+        <li>r_name->The Crawling Gremlins</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerSettlementangelcult</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->wahmart</li>
+        <li>r_name->shamia's hotspring resort</li>
+        <li>r_name->shamia's zombie survival fortress</li>
+        <li>r_name(p=4)->the gremlin [objone]</li>
+        <li>r_name(p=4)->shamia's [objone]</li>
+        <li>r_name(p=4)->chat's [objone]</li>
+        <li>objone->castle</li>
+        <li>objone->pillow fort</li>
+        <li>objone->art studio</li>
+        <li>objone->pokemon sanctary</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+
+
+  <FactionDef ParentName="TribeRoughBase">
+    <defName>kindFallenangel</defName>
+    <label>angel cult</label>
+    <description>An unfriendly, territorial tribe of neanderthals. They are open to peaceful trade, but are otherwise unfriendly and territorial. Warriors from their tribe won't hesitate to bash in the skulls of anyone they deem dangerous. Their numbers, and the extreme amounts of damage they absorb before falling make them serious foes despite their lack of technology and analytical ability.\n\nHaving been on this planet for countless generations, they have no memory of how they got here. They might be the descendants of a neanderthal service caste from a dead civilization, or even the leftovers from some ancient science experiment.</description>
+    
+    <factionNameMaker>NamerFactionangelcult</factionNameMaker>
+    <settlementNameMaker>NamerSettlementangelcult</settlementNameMaker>
+    <pawnSingular>gremlins</pawnSingular>
+    <pawnsPlural>gremlins</pawnsPlural>
+    <replacesFaction>TribeRough</replacesFaction>
+    <factionIconPath>UI/Faction_Icons/Angel_cult</factionIconPath>
+    <colorSpectrum>
+      <li>(0.35, 0.30, 0.60)</li>
+      <li>(0.75, 0.50, 0.80)</li>
+    </colorSpectrum>
+    <melaninRange>0~0.5</melaninRange>
+    <naturalEnemy>false</naturalEnemy>
+    <caravanTraderKinds>
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Caravan_Neolithic_Slaver</li>
+      <li>Caravan_Angel_ShamanMerchant</li>
+      <li>Caravan_Angel_chocolate</li>
+      <li>Caravan_Angel_weapons</li>
+     
+    </caravanTraderKinds>
+    <requiredMemes>
+      <li>Bloodfeeding</li>
+    </requiredMemes>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <gremlins>0.15</gremlins>
+        <Baseliner>0.80</Baseliner>
+        <Fallen_angel>0.05</Fallen_angel>
+      </xenotypeChances>
+    </xenotypeSet>
+    <dialogFactionGreetingHostile>NeanderthalFactionGreetingHostile</dialogFactionGreetingHostile>
+    <dialogFactionGreetingHostileAppreciative>NeanderthalFactionGreetingHostileAppreciative</dialogFactionGreetingHostileAppreciative>
+    <dialogFactionGreetingWary>NeanderthalFactionGreetingWary</dialogFactionGreetingWary>
+    <dialogFactionGreetingWarm>NeanderthalFactionGreetingWarm</dialogFactionGreetingWarm>
+    <pawnGroupMakers Inherit="False">
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Tribal_Penitent>5</Tribal_Penitent>
+          <Tribal_Warrior>5</Tribal_Warrior>
+          <Tribal_Archer>1</Tribal_Archer>
+          <Tribal_Hunter>1</Tribal_Hunter>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>5</Tribal_Berserker>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>3</Tribal_ChiefMelee>
+          <fallenangel_melee_basic>2</fallenangel_melee_basic>
+          <fallenangel_ranged_basic>1</fallenangel_ranged_basic>
+          <fallenangel_melee_mid>2</fallenangel_melee_mid>
+          <fallenangel_ranged_mid>1</fallenangel_ranged_mid>
+          <fallenangel_explosive_mid>0.5</fallenangel_explosive_mid>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, melee only -->
+        <kindDef>Combat</kindDef>
+        <commonality>150</commonality>
+        <options>
+          <Tribal_Penitent>10</Tribal_Penitent>
+          <Tribal_Warrior>10</Tribal_Warrior>
+          <Tribal_Berserker>10</Tribal_Berserker>
+          <Tribal_ChiefMelee>5</Tribal_ChiefMelee>
+          <fallenangel_melee_basic>4</fallenangel_melee_basic>
+          <fallenangel_melee_mid>2</fallenangel_melee_mid>
+          
+      </options>
+      </li>
+      <li>
+        <!-- breach-capable fights, breachers plus ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>5</commonality>
+        <options>
+          <Tribal_Breacher>5</Tribal_Breacher>
+          <Tribal_Penitent>5</Tribal_Penitent>
+          <Tribal_Warrior>5</Tribal_Warrior>
+          <Tribal_Archer>1</Tribal_Archer>
+          <Tribal_Hunter>1</Tribal_Hunter>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>5</Tribal_Berserker>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>3</Tribal_ChiefMelee>
+          <fallenangel_melee_basic>2</fallenangel_melee_basic>
+          <fallenangel_ranged_basic>1</fallenangel_ranged_basic>
+          <fallenangel_melee_mid>2</fallenangel_melee_mid>
+          <fallenangel_ranged_mid>1</fallenangel_ranged_mid>
+      </options>
+      </li>
+      <li>
+        <!-- Peaceful -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Tribal_Warrior>20</Tribal_Warrior>
+          <Tribal_Child>10</Tribal_Child>
+          <Tribal_Archer>1</Tribal_Archer>
+          <Tribal_Hunter>1</Tribal_Hunter>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>5</Tribal_Berserker>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>3</Tribal_ChiefMelee>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Angel_Trader>1</Angel_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>6</Muffalo>
+          <Dromedary>5</Dromedary>
+          <Alpaca>2.5</Alpaca>
+          <Elephant>2</Elephant>
+        </carriers>
+        <guards>
+          <Tribal_Warrior>7</Tribal_Warrior>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>7</Tribal_Berserker>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Tribal_Warrior>7</Tribal_Warrior>
+          <Tribal_Archer>1</Tribal_Archer>
+          <Tribal_Hunter>1</Tribal_Hunter>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>7</Tribal_Berserker>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>3</Tribal_ChiefMelee>
+          <fallenangel_melee_mid>2</fallenangel_melee_mid>
+          <fallenangel_ranged_mid>1</fallenangel_ranged_mid>
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement_RangedOnly</kindDef>
+        <options>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+          <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>10</Tribal_ChiefMelee>
+          <fallenangel_melee_basic>2</fallenangel_melee_basic>
+          <fallenangel_ranged_basic>1</fallenangel_ranged_basic>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Miner>1</Tribal_Miner>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Hunters</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Hunter>1</Tribal_Hunter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Loggers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Logger>1</Tribal_Logger>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Farmers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Farmer>1</Tribal_Farmer>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  
+  <FactionDef ParentName="TribeRoughBase">
+    <defName>meanFallenangel</defName>
+    <label>rough angel cult</label>
+    <description>An unfriendly, territorial tribe of neanderthals. They are open to peaceful trade, but are otherwise unfriendly and territorial. Warriors from their tribe won't hesitate to bash in the skulls of anyone they deem dangerous. Their numbers, and the extreme amounts of damage they absorb before falling make them serious foes despite their lack of technology and analytical ability.\n\nHaving been on this planet for countless generations, they have no memory of how they got here. They might be the descendants of a neanderthal service caste from a dead civilization, or even the leftovers from some ancient science experiment.</description>
+    
+    <factionNameMaker>NamerFactionangelcult</factionNameMaker>
+    <settlementNameMaker>NamerSettlementangelcult</settlementNameMaker>
+    <pawnSingular>gremlins</pawnSingular>
+    <pawnsPlural>gremlins</pawnsPlural>
+    <factionIconPath>UI/Faction_Icons/Angel_cult</factionIconPath>
+    <colorSpectrum>
+      <li>(0.35, 0.30, 0.60)</li>
+      <li>(0.45, 0.40, 0.90)</li>
+    </colorSpectrum>
+    <replacesFaction>TribeRough</replacesFaction>
+    <melaninRange>0~0.5</melaninRange>
+    <naturalEnemy>true</naturalEnemy>
+    <caravanTraderKinds>
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Caravan_Neolithic_Slaver</li>
+      <li>Caravan_Angel_ShamanMerchant</li>
+      <li>Caravan_Angel_chocolate</li>
+      <li>Caravan_Angel_weapons</li>
+     
+    </caravanTraderKinds>
+    <requiredMemes>
+      <li>Bloodfeeding</li>
+    </requiredMemes>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <gremlins>0.95</gremlins>
+        <Fallen_angel>0.05</Fallen_angel>
+      </xenotypeChances>
+    </xenotypeSet>
+    <dialogFactionGreetingHostile>NeanderthalFactionGreetingHostile</dialogFactionGreetingHostile>
+    <dialogFactionGreetingHostileAppreciative>NeanderthalFactionGreetingHostileAppreciative</dialogFactionGreetingHostileAppreciative>
+    <dialogFactionGreetingWary>NeanderthalFactionGreetingWary</dialogFactionGreetingWary>
+    <dialogFactionGreetingWarm>NeanderthalFactionGreetingWarm</dialogFactionGreetingWarm>
+    <pawnGroupMakers Inherit="False">
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Tribal_Penitent>5</Tribal_Penitent>
+          <Tribal_Warrior>5</Tribal_Warrior>
+          <Tribal_Archer>1</Tribal_Archer>
+          <Tribal_Hunter>1</Tribal_Hunter>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>5</Tribal_Berserker>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>3</Tribal_ChiefMelee>
+          <fallenangel_melee_basic>2</fallenangel_melee_basic>
+          <fallenangel_ranged_basic>1</fallenangel_ranged_basic>
+          <fallenangel_melee_mid>2</fallenangel_melee_mid>
+          <fallenangel_ranged_mid>1</fallenangel_ranged_mid>
+          <fallenangel_explosive_mid>0.5</fallenangel_explosive_mid>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, melee only -->
+        <kindDef>Combat</kindDef>
+        <commonality>150</commonality>
+        <options>
+          <Tribal_Penitent>10</Tribal_Penitent>
+          <Tribal_Warrior>10</Tribal_Warrior>
+          <Tribal_Berserker>10</Tribal_Berserker>
+          <Tribal_ChiefMelee>5</Tribal_ChiefMelee>
+          <fallenangel_melee_basic>4</fallenangel_melee_basic>
+          <fallenangel_melee_mid>2</fallenangel_melee_mid>
+          
+      </options>
+      </li>
+      <li>
+        <!-- breach-capable fights, breachers plus ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>5</commonality>
+        <options>
+          <Tribal_Breacher>5</Tribal_Breacher>
+          <Tribal_Penitent>5</Tribal_Penitent>
+          <Tribal_Warrior>5</Tribal_Warrior>
+          <Tribal_Archer>1</Tribal_Archer>
+          <Tribal_Hunter>1</Tribal_Hunter>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>5</Tribal_Berserker>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>3</Tribal_ChiefMelee>
+          <fallenangel_melee_basic>2</fallenangel_melee_basic>
+          <fallenangel_ranged_basic>1</fallenangel_ranged_basic>
+          <fallenangel_melee_mid>2</fallenangel_melee_mid>
+          <fallenangel_ranged_mid>1</fallenangel_ranged_mid>
+      </options>
+      </li>
+      <li>
+        <!-- Peaceful -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Tribal_Warrior>20</Tribal_Warrior>
+          <Tribal_Child>10</Tribal_Child>
+          <Tribal_Archer>1</Tribal_Archer>
+          <Tribal_Hunter>1</Tribal_Hunter>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>5</Tribal_Berserker>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>3</Tribal_ChiefMelee>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Angel_Trader>1</Angel_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>6</Muffalo>
+          <Dromedary>5</Dromedary>
+          <Alpaca>2.5</Alpaca>
+          <Elephant>2</Elephant>
+        </carriers>
+        <guards>
+          <Tribal_Warrior>7</Tribal_Warrior>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>7</Tribal_Berserker>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Tribal_Warrior>7</Tribal_Warrior>
+          <Tribal_Archer>1</Tribal_Archer>
+          <Tribal_Hunter>1</Tribal_Hunter>
+          <Tribal_HeavyArcher>1</Tribal_HeavyArcher>
+          <Tribal_Berserker>7</Tribal_Berserker>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>3</Tribal_ChiefMelee>
+          <fallenangel_melee_mid>2</fallenangel_melee_mid>
+          <fallenangel_ranged_mid>1</fallenangel_ranged_mid>
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement_RangedOnly</kindDef>
+        <options>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+          <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+          <Tribal_ChiefRanged>1</Tribal_ChiefRanged>
+          <Tribal_ChiefMelee>10</Tribal_ChiefMelee>
+          <fallenangel_melee_basic>2</fallenangel_melee_basic>
+          <fallenangel_ranged_basic>1</fallenangel_ranged_basic>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Miner>1</Tribal_Miner>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Hunters</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Hunter>1</Tribal_Hunter>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Loggers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Logger>1</Tribal_Logger>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Farmers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Tribal_Farmer>1</Tribal_Farmer>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+
+
+
+
+
+
+
+
+
+</Defs>
