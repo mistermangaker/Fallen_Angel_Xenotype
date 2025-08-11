@@ -71,6 +71,10 @@
         <weaponTags>
             <li>NonCombat</li>
         </weaponTags>
+        <stuffCategories>
+          <li>Metallic</li>
+          <li>Woody</li>
+        </stuffCategories>
         <costStuffCount>40</costStuffCount>
         <statBases>
             <WorkToMake>3200</WorkToMake>
@@ -132,6 +136,10 @@
           <li>MedievalMeleeBasic</li>
           <li>NeolithicMeleeBasic</li>
         </weaponTags>
+        <stuffCategories>
+          <li>Metallic</li>
+          <li>Woody</li>
+        </stuffCategories>
         <costStuffCount>40</costStuffCount>
         <statBases>
             <WorkToMake>3200</WorkToMake>
@@ -212,6 +220,10 @@
         <costList>
             <Cloth>50</Cloth>
         </costList>
+        <stuffCategories>
+          <li>Fabric</li>
+          <li>Leathery</li>
+        </stuffCategories>
         <costStuffCount>40</costStuffCount>
         <statBases>
             <WorkToMake>3200</WorkToMake>
