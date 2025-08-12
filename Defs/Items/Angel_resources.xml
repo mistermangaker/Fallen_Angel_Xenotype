@@ -11,8 +11,8 @@
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Metal_Drop</soundDrop>
     <statBases>
-      <MarketValue>1.9</MarketValue>
-      <Mass>0.5</Mass>
+      <MarketValue>5</MarketValue>
+      <Mass>1</Mass>
       <StuffPower_Armor_Sharp>0.9</StuffPower_Armor_Sharp>
       <StuffPower_Armor_Blunt>0.45</StuffPower_Armor_Blunt>
       <StuffPower_Armor_Heat>0.60</StuffPower_Armor_Heat>
@@ -45,9 +45,9 @@
         <Beauty>1</Beauty>
         <Flammability>0.4</Flammability>
       </statFactors>
-      
+      <canSuggestUseDefaultStuff>false</canSuggestUseDefaultStuff>
     </stuffProps>
-    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    
     <allowedArchonexusCount>80</allowedArchonexusCount>
   </ThingDef>
 

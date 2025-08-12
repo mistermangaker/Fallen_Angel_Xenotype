@@ -67,7 +67,7 @@
     <defName>fallenangel_melee_basic</defName>
     <label>angelic melee</label>
     <combatPower>30</combatPower>
-    <weaponMoney>330~650</weaponMoney>
+    <weaponMoney>400~700</weaponMoney>
     <weaponTags>
       <li>MedievalMeleeBasic</li>
     </weaponTags>
@@ -78,7 +78,7 @@
     <defName>fallenangel_ranged_basic</defName>
     <label>angelic ranged</label>
     <combatPower>30</combatPower>
-    <weaponMoney>330~650</weaponMoney>
+    <weaponMoney>400~700</weaponMoney>
         <disallowedTraits>
       <li>Brawler</li>
     </disallowedTraits>
@@ -102,7 +102,7 @@
     <defName>fallenangel_melee_mid</defName>
     <label>angelic melee</label>
     <combatPower>70</combatPower>
-    <weaponMoney>330~650</weaponMoney>
+    <weaponMoney>650~700</weaponMoney>
     <weaponTags>
       <li>Angelic_melee</li>
     </weaponTags>
@@ -113,7 +113,7 @@
     <defName>fallenangel_ranged_mid</defName>
     <label>angelic ranged</label>
     <combatPower>70</combatPower>
-    <weaponMoney>330~650</weaponMoney>
+   <weaponMoney>650~700</weaponMoney>
         <disallowedTraits>
       <li>Brawler</li>
     </disallowedTraits>
@@ -126,7 +126,7 @@
     <defName>fallenangel_explosive_mid</defName>
     <label>angelic explosive</label>
     <combatPower>100</combatPower>
-    <weaponMoney>330~650</weaponMoney>
+    <weaponMoney>500~900</weaponMoney>
         <disallowedTraits>
       <li>Brawler</li>
     </disallowedTraits>
